@@ -16,9 +16,11 @@ class Fakebook extends React.Component {
         <h1>fakebook</h1>
       </div>
 
-      { this.state.posts.map(post => {
-        return <Post key={ post._id } { ...post } />
-      })}
+      <div className='content'>
+        { this.state.posts.map(post => {
+          return <Post key={ post._id } { ...post } />
+        })}
+      </div>
     </div>;
   }
 

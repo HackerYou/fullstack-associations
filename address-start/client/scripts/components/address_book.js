@@ -27,16 +27,18 @@ class AddressBook extends React.Component {
         <button onClick={ this.addContact }>Add a contact</button>
       </div>
 
-      { this.state.adding === 'company' ? <AddCompany onAdd={ this.refresh } /> : null }
-      { this.state.adding === 'contact' ? <AddContact onAdd={ this.refresh } /> : null }
+      <div className='contents'>
+        { this.state.adding === 'company' ? <AddCompany onAdd={ this.refresh } /> : null }
+        { this.state.adding === 'contact' ? <AddContact onAdd={ this.refresh } /> : null }
 
-      { this.state.companies.map(company => {
-        return <Company key={ company._id } { ...company } />
-      })}
+        { this.state.companies.map(company => {
+          return <Company key={ company._id } { ...company } />
+        })}
 
-      { this.state.contacts.map(contact => {
-        return <Contact key={ contact._id } { ...contact } />
-      })}
+        { this.state.contacts.map(contact => {
+          return <Contact key={ contact._id } { ...contact } />
+        })}
+      </div>
     </div>;
   }
 
